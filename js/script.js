@@ -101,7 +101,7 @@ async function displayAlbums() {
       let jsonResponse = await a.json();
 
       cardcontainer.innerHTML += `<div data-folder="${folder}" class="card">
-        <img src="/songs/${folder}/cover.jpg" alt="">
+        <img src="../songs/${folder}/cover.jpg" alt="">
         <h2>${jsonResponse.title}</h2>
         <p>${jsonResponse.discription}</p>
       </div>`;
