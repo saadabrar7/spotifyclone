@@ -1,0 +1,67 @@
+.border{
+    border: 2px solid red;
+}
+
+.flex{
+    display: flex;
+    margin: 4px;
+}
+
+.justify-center{
+    justify-content: center;
+}
+
+.align-center{
+    align-items: center;
+}
+
+.bg-black{
+    background-color: black;
+    color: white;
+}
+
+.invert{
+    filter: invert(1);
+}
+
+.bg-gray{
+    background-color: #121212;
+}
+
+.rounded{
+    border-radius: 7px;
+}
+
+.m-1{
+    margin: 5px;
+}
+
+p-1{
+    padding: 10px;
+}
+
+/* Apply to all browsers except Firefox */
+::-webkit-scrollbar {
+    width: 12px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #333; /* Set your desired background color */
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #555; /* Set your desired handle color */
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #777; /* Set your desired handle color on hover */
+  }
+  
+  /* Apply to Firefox */
+  * {
+    scrollbar-color: #333 #555; /* Set your desired track and handle colors for Firefox */
+  }
+  
