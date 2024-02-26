@@ -112,7 +112,7 @@ async function displayAlbums() {
   cardcontainer.addEventListener("click", async (event) => {
     const clickedCard = event.target.closest(".card");
     if (clickedCard) {
-      songs = await getsongs(`songs/${clickedCard.dataset.folder}`);
+      songs = await getsongs(`../songs/${clickedCard.dataset.folder}`);
         document.querySelector(".left").style.left = "0"
       }
     // playMusic(songs[0])
