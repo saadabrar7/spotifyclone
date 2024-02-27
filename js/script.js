@@ -95,7 +95,7 @@ async function displayAlbums() {
   let cardcontainer = document.querySelector(".cardcontainer");
 
   Array.from(anchors).forEach(async e => {
-    if (e.href.includes("../songs"){
+    if (e.href.includes("../songs")
       let folder = e.href.split("/").slice(-1)[0];
       let a = await fetch(`../songs/${folder}/info.json`);
       let jsonResponse = await a.json();
@@ -105,7 +105,7 @@ async function displayAlbums() {
         <h2>${jsonResponse.title}</h2>
         <p>${jsonResponse.discription}</p>
       </div>`;
-    }
+    
   });
 
   // Attach a single click event listener to the parent container
