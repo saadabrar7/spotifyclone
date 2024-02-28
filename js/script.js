@@ -18,7 +18,7 @@ function SecondsToMinutesSeconds(seconds) {
 
 async function getsongs(folder) {
   currfolder = folder;
-  let a = await fetch(`/${folder}/`);
+  let a = await fetch(`songs/${folder}/`);
   let response = await a.text();
   let div = document.createElement("div");
   div.innerHTML = response;
@@ -87,7 +87,7 @@ const playMusic = (track, pause = false) => {
 
 
 async function displayAlbums() {
-  let a = await fetch(`/songs/`);
+  let a = await fetch(`songs/`);
   let response = await a.text();
   let div = document.createElement("div");
   div.innerHTML = response;
@@ -95,13 +95,13 @@ async function displayAlbums() {
   let cardcontainer = document.querySelector(".cardcontainer");
 
   Array.from(anchors).forEach(async e => {
-    if (e.href.includes("/songs"){
+    if (e.href.includes("songs"){
       let folder = e.href.split("/").slice(-1)[0];
-      let a = await fetch(`/songs/${folder}/info.json`);
+      let a = await fetch(`songs/${folder}/info.json`);
       let jsonResponse = await a.json();
 
       cardcontainer.innerHTML += `<div data-folder="${folder}" class="card">
-        <img src="/songs/${folder}/cover.jpg" alt="">
+        <img src="songs/${folder}/cover.jpg" alt="">
         <h2>${jsonResponse.title}</h2>
         <p>${jsonResponse.discription}</p>
       </div>`;
@@ -112,7 +112,7 @@ async function displayAlbums() {
   cardcontainer.addEventListener("click", async (event) => {
     const clickedCard = event.target.closest(".card");
     if (clickedCard) {
-      songs = await getsongs(`/songs/${clickedCard.dataset.folder}`);
+      songs = await getsongs(`songs/${clickedCard.dataset.folder}`);
         document.querySelector(".left").style.left = "0"
       }
     // playMusic(songs[0])
@@ -122,7 +122,7 @@ async function displayAlbums() {
 
 
 async function main() {
-  await getsongs("/songs/ncs");
+  await getsongs("songs/ncs");
   playMusic(songs[0], true)
 
  displayAlbums()
